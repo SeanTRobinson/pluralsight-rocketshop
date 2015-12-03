@@ -1,7 +1,7 @@
 var assert = require('assert');
 var MembershipApplication = require('../lib/membership_application');
 
-describe('Applying for a mission', function() {
+describe('Membership application requirements', function() {
 
     var validApp;
 
@@ -16,28 +16,28 @@ describe('Applying for a mission', function() {
         });
     });
 
-    describe('Using valid email, first, last, hight, age, weight', function() {
-        it('is valid', function() {
+    describe('Application is valid if...', function() {
+        it('all validators pass', function() {
             assert(validApp.isValid(), 'Not valid');
         });
 
-        it('reports a valid email', function() {
+        it('email is 4 or more chars and contians an @', function() {
             assert(validApp.emailIsValid(), 'Not valid');
         });
 
-        it('reports a valid height', function() {
+        it('height is between 60 and 75 inches', function() {
             assert(validApp.heightIsValid(), 'Not valid');
         });
 
-        it('reports a valid age', function() {
+        it('age is between 15 and 100', function() {
             assert(validApp.ageIsValid(), 'Not valid');
         });
 
-        it('reports a valid weight', function() {
+        it('weight is between 100 and 300', function() {
             assert(validApp.weightIsValid(), 'Not valid');
         });
 
-        it('reports a valid name', function() {
+        it('first and last name are provided', function() {
             assert(validApp.nameIsValid(), 'Not valid');
         });
 
